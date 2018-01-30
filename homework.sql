@@ -1,3 +1,5 @@
+-- 创建mysql数据库
+CREATE SCHEMA `homework` DEFAULT CHARACTER SET utf8 ;
 -- 创建用户点赞表
 CREATE TABLE `homework`.`praise` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
