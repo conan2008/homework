@@ -1,5 +1,6 @@
 package com.springboot.homework.service;
 
+import com.springboot.homework.controller.request.AddOne;
 import com.springboot.homework.dao.PraiseDao;
 import com.springboot.homework.entity.Praise;
 import com.springboot.homework.util.BaseInfo;
@@ -24,16 +25,16 @@ public class PraiseService {
         return BaseInfo.SUCCESS;
     }
 
-    public Integer addOnePraise(Integer praiseId) {
+    public Integer addOnePraise(AddOne addOne) {
 
         try {
-            Praise praise = praiseDao.findOne(praiseId);
+            Praise praise = praiseDao.findOne(addOne.getAddId());
 
             if(praise == null) {
                 return BaseInfo.FAIL;
             }
 
-            praise.setPraiseNum(praise.getPraiseNum() + 1);
+            praise.setPraiseNum(addOne.getPraiseNum());
             praise.setUpdateTime(new Date());
             praiseDao.save(praise);
 

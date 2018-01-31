@@ -37,7 +37,7 @@ public class PraiseController {
         Integer result;
         BaseResponse response = new BaseResponse();
 
-        result = praiseService.addOnePraise(addOne.getAddId());
+        result = praiseService.addOnePraise(addOne);
 
         return BaseInfo.getResponse(result);
     }

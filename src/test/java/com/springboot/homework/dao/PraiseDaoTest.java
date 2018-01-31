@@ -20,8 +20,15 @@ public class PraiseDaoTest {
     private PraiseDao praiseDao;
 
     @Test
+    public void findOneTest() {
+        Praise result = praiseDao.findOne(1);
+        Assert.assertNotNull(result);
+        //Assert.assertNotEquals(null, result);
+    }
+
+    @Test
     public void saveTest() {
-        Praise praise = new Praise("志佳", 0, new Date(), new Date());
+        Praise praise = new Praise("学彤", 0, new Date(), new Date());
         Praise result = praiseDao.save(praise);
         Assert.assertNotNull(result);
         //Assert.assertNotEquals(null, result);

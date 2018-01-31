@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-@Data
 public class Praise {
 
     @Id
@@ -21,10 +20,54 @@ public class Praise {
     private Date createTime;
     private Date updateTime;
 
+    public Praise() {
+
+    }
+
     public Praise(String userName, Integer praiseNum, Date createTime, Date updateTime) {
         this.userName = userName;
         this.praiseNum = praiseNum;
         this.createTime = createTime;
+        this.updateTime = updateTime;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public Integer getPraiseNum() {
+        return praiseNum;
+    }
+
+    public void setPraiseNum(Integer praiseNum) {
+        this.praiseNum = praiseNum;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
 }
